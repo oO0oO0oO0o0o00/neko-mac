@@ -14,13 +14,12 @@ enum AutostartErrorKind {
 
 public let kAutostartKey = "autostart"
 
-class SettingsViewModel: ObservableObject {
+@Observable
+class SettingsViewModel {
     private var catSettings: CatSettings
     
-    @Published
     var easterEggClickCount = 0
     
-    @Published
     var autoStart: Bool = false {
         didSet {
             autostartError = nil
@@ -47,7 +46,6 @@ class SettingsViewModel: ObservableObject {
         }
     }
     
-    @Published
     var autostartError: AutostartErrorKind?
     
     var onLayoutChanged: () -> Void
@@ -66,24 +64,24 @@ class SettingsViewModel: ObservableObject {
     var transparencyRadius: Int32 {
         get { catSettings.transparencyRadius }
         set {
-            objectWillChange.send()
             catSettings.transparencyRadius = newValue
+            catSettings = catSettings
         }
     }
     
     var centerTransparency: Int32 {
         get { catSettings.centerTransparency }
         set {
-            objectWillChange.send()
             catSettings.centerTransparency = newValue
+            catSettings = catSettings
         }
     }
     
     var numCats: Int32 {
         get { catSettings.numCats }
         set {
-            objectWillChange.send()
             catSettings.numCats = newValue
+            catSettings = catSettings
             onLayoutChanged()
         }
     }

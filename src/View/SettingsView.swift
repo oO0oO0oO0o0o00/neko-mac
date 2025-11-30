@@ -9,7 +9,7 @@ import Foundation
 import SwiftUI
 
 struct SettingsView: View {
-    @StateObject
+    @State
     private var settings: SettingsViewModel
     
     @Environment(\.dismiss)
@@ -19,9 +19,8 @@ struct SettingsView: View {
         settings: CatSettings,
         onLayoutChanged: @escaping () -> Void
     ) {
-        self._settings = StateObject(
-            wrappedValue: SettingsViewModel(
-                settings, onLayoutChanged: onLayoutChanged))
+        self.settings = SettingsViewModel(
+                settings, onLayoutChanged: onLayoutChanged)
     }
     
     var body: some View {

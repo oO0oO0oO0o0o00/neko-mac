@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5B567E392E92339600451109 /* ScreenFilterSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B567E382E92338B00451109 /* ScreenFilterSettings.swift */; };
 		5B5D87692CF3040800D053D4 /* Main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5D87682CF3040800D053D4 /* Main.swift */; };
 		5B9BE4322D2A3ABD00575EAB /* EnterableSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B9BE4312D2A3ABD00575EAB /* EnterableSlider.swift */; };
 		5B9BE4342D2A3AF200575EAB /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B9BE4332D2A3AF200575EAB /* SettingsView.swift */; };
@@ -16,7 +17,6 @@
 		5BF9F5762D33B2DB00A3F8C0 /* CatState.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BF9F5752D33B2DB00A3F8C0 /* CatState.m */; };
 		5BF9F5792D33B3BF00A3F8C0 /* CatFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BF9F5782D33B3BF00A3F8C0 /* CatFrame.m */; };
 		5BF9F57E2D48689800A3F8C0 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF9F57D2D48689600A3F8C0 /* SettingsViewModel.swift */; };
-		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
 		A700278D0CA641680057F7E4 /* CatPanel.m in Sources */ = {isa = PBXBuildFile; fileRef = A700278C0CA641680057F7E4 /* CatPanel.m */; };
 		A700284E0CA6CB7B0057F7E4 /* awake1.gif in Resources */ = {isa = PBXBuildFile; fileRef = A700282E0CA6CB7B0057F7E4 /* awake1.gif */; };
 		A700284F0CA6CB7B0057F7E4 /* down1.gif in Resources */ = {isa = PBXBuildFile; fileRef = A700282F0CA6CB7B0057F7E4 /* down1.gif */; };
@@ -55,12 +55,9 @@
 
 /* Begin PBXFileReference section */
 		089C165DFE840E0CC02AAC07 /* English */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
-		13E42FB307B3F0F600E4EEF1 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = /System/Library/Frameworks/CoreData.framework; sourceTree = "<absolute>"; };
-		29B97324FDCFA39411CA2CEA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
-		29B97325FDCFA39411CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
 		5B1AF34F2CF9F5BD0053019F /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 		5B1AF3772CF9F8E70053019F /* Signing.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Signing.xcconfig; sourceTree = "<group>"; };
+		5B567E382E92338B00451109 /* ScreenFilterSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenFilterSettings.swift; sourceTree = "<group>"; };
 		5B5D87672CF3040800D053D4 /* Neko-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Neko-Bridging-Header.h"; sourceTree = "<group>"; };
 		5B5D87682CF3040800D053D4 /* Main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Main.swift; sourceTree = "<group>"; };
 		5B9BE4312D2A3ABD00575EAB /* EnterableSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterableSlider.swift; sourceTree = "<group>"; };
@@ -121,43 +118,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		080E96DDFE201D6D7F000001 /* Classes */ = {
-			isa = PBXGroup;
-			children = (
-				5BF9F57C2D48688900A3F8C0 /* ViewModel */,
-				5BF9F57A2D33B75600A3F8C0 /* View */,
-				5BF9F5702D33B27C00A3F8C0 /* Settings */,
-				5BF9F56C2D33B23600A3F8C0 /* Animator */,
-			);
-			name = Classes;
-			path = src;
-			sourceTree = "<group>";
-		};
-		1058C7A0FEA54F0111CA2CBB /* Linked Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */,
-			);
-			name = "Linked Frameworks";
-			sourceTree = "<group>";
-		};
-		1058C7A2FEA54F0111CA2CBB /* Other Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				29B97324FDCFA39411CA2CEA /* AppKit.framework */,
-				13E42FB307B3F0F600E4EEF1 /* CoreData.framework */,
-				29B97325FDCFA39411CA2CEA /* Foundation.framework */,
-			);
-			name = "Other Frameworks";
-			sourceTree = "<group>";
-		};
 		19C28FACFE9D520D11CA2CBB /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -169,27 +135,15 @@
 		29B97314FDCFA39411CA2CEA /* 猫 */ = {
 			isa = PBXGroup;
 			children = (
+				5B44EFB32EDBD40E001DF6E5 /* src */,
 				5B1AF34F2CF9F5BD0053019F /* Config.xcconfig */,
 				5B1AF3772CF9F8E70053019F /* Signing.xcconfig */,
 				A78E7A3F1A576567008B4180 /* Info.plist */,
 				A78E7A3E1A575EFE008B4180 /* Neko.entitlements */,
-				080E96DDFE201D6D7F000001 /* Classes */,
-				29B97315FDCFA39411CA2CEA /* Other Sources */,
 				29B97317FDCFA39411CA2CEA /* Resources */,
-				29B97323FDCFA39411CA2CEA /* Frameworks */,
 				19C28FACFE9D520D11CA2CBB /* Products */,
 			);
 			name = "猫";
-			sourceTree = "<group>";
-		};
-		29B97315FDCFA39411CA2CEA /* Other Sources */ = {
-			isa = PBXGroup;
-			children = (
-				5B5D87682CF3040800D053D4 /* Main.swift */,
-				5B5D87672CF3040800D053D4 /* Neko-Bridging-Header.h */,
-			);
-			name = "Other Sources";
-			path = src;
 			sourceTree = "<group>";
 		};
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
@@ -233,13 +187,26 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
-		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
+		5B44EFB32EDBD40E001DF6E5 /* src */ = {
 			isa = PBXGroup;
 			children = (
-				1058C7A0FEA54F0111CA2CBB /* Linked Frameworks */,
-				1058C7A2FEA54F0111CA2CBB /* Other Frameworks */,
+				5B5D87682CF3040800D053D4 /* Main.swift */,
+				5B5D87672CF3040800D053D4 /* Neko-Bridging-Header.h */,
+				5B567E372E92338500451109 /* Model */,
+				5BF9F57C2D48688900A3F8C0 /* ViewModel */,
+				5BF9F57A2D33B75600A3F8C0 /* View */,
+				5BF9F5702D33B27C00A3F8C0 /* Settings */,
+				5BF9F56C2D33B23600A3F8C0 /* Animator */,
 			);
-			name = Frameworks;
+			path = src;
+			sourceTree = "<group>";
+		};
+		5B567E372E92338500451109 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5B567E382E92338B00451109 /* ScreenFilterSettings.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		5BF9F56C2D33B23600A3F8C0 /* Animator */ = {
@@ -407,6 +374,7 @@
 				5B9BE4322D2A3ABD00575EAB /* EnterableSlider.swift in Sources */,
 				5B5D87692CF3040800D053D4 /* Main.swift in Sources */,
 				5BF9F56F2D33B25500A3F8C0 /* CatAnimator.m in Sources */,
+				5B567E392E92339600451109 /* ScreenFilterSettings.swift in Sources */,
 				5B9BE4362D2A3CE600575EAB /* Binding+Conversions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -440,7 +408,7 @@
 				GCC_OPTIMIZATION_LEVEL = 0;
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Applications";
-				MACOSX_DEPLOYMENT_TARGET = 13.5;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
 				PRODUCT_BUNDLE_IDENTIFIER = rbq2012.neko;
 				PRODUCT_NAME = Neko;
 				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
@@ -465,7 +433,7 @@
 				GCC_MODEL_TUNING = G5;
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Applications";
-				MACOSX_DEPLOYMENT_TARGET = 13.5;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
 				PRODUCT_BUNDLE_IDENTIFIER = rbq2012.neko;
 				PRODUCT_NAME = Neko;
 				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
