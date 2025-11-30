@@ -1,15 +1,13 @@
 # 猫(Neko)
 
-Neko up-to-date for Mac 13+ in 2020s.
+Neko up-to-date for Mac 14+ in 2020s.
 
 - [x] Supports multiple screens of different sizes and zoom levels (cat moves across)
 - [x] Supports fullscreen and normal apps
 - [x] NOT blocking the content using dynamic transparency
 - [x] More than one cats!
 - [x] Starts on login
-- No alternative skins so far, but do we need any
-- Still unable to quit normally, but do we really need to
-- No cert & not in AppStore yet. Could it really be published (while being in public domain)?
+- No cert & not in AppStore. Publish if you like
 
 ![Recording](attachments/record.gif)
 

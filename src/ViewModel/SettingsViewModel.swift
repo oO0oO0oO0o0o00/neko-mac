@@ -8,7 +8,7 @@
 import Foundation
 import ServiceManagement
 
-enum AutostartErrorKind {
+enum AutoStartErrorKind {
     case register, unregister
 }
 
@@ -22,14 +22,14 @@ class SettingsViewModel {
     
     var autoStart: Bool = false {
         didSet {
-            autostartError = nil
+            autoStartError = nil
             UserDefaults.standard.set(autoStart, forKey: kAutostartKey)
             if autoStart {
                 do {
                     try SMAppService.mainApp.register()
                 } catch let error as NSError {
                     if error.code != kSMErrorAlreadyRegistered {
-                        autostartError = .register
+                        autoStartError = .register
                         debugPrint("Cannot register autostart: \(error)")
                     }
                 }
@@ -38,7 +38,7 @@ class SettingsViewModel {
                     try SMAppService.mainApp.unregister()
                 } catch let error as NSError {
                     if error.code != kSMErrorJobNotFound {
-                        autostartError = .unregister
+                        autoStartError = .unregister
                         debugPrint("Cannot unregister autostart: \(error)")
                     }
                 }
@@ -46,7 +46,7 @@ class SettingsViewModel {
         }
     }
     
-    var autostartError: AutostartErrorKind?
+    var autoStartError: AutoStartErrorKind?
     
     var onLayoutChanged: () -> Void
     
