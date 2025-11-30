@@ -8,29 +8,28 @@
 import Foundation
 import ServiceManagement
 
-enum AutostartErrorKind {
+enum AutoStartErrorKind {
     case register, unregister
 }
 
 public let kAutostartKey = "autostart"
 
-class SettingsViewModel: ObservableObject {
+@Observable
+class SettingsViewModel {
     private var catSettings: CatSettings
     
-    @Published
     var easterEggClickCount = 0
     
-    @Published
     var autoStart: Bool = false {
         didSet {
-            autostartError = nil
+            autoStartError = nil
             UserDefaults.standard.set(autoStart, forKey: kAutostartKey)
             if autoStart {
                 do {
                     try SMAppService.mainApp.register()
                 } catch let error as NSError {
                     if error.code != kSMErrorAlreadyRegistered {
-                        autostartError = .register
+                        autoStartError = .register
                         debugPrint("Cannot register autostart: \(error)")
                     }
                 }
@@ -39,7 +38,7 @@ class SettingsViewModel: ObservableObject {
                     try SMAppService.mainApp.unregister()
                 } catch let error as NSError {
                     if error.code != kSMErrorJobNotFound {
-                        autostartError = .unregister
+                        autoStartError = .unregister
                         debugPrint("Cannot unregister autostart: \(error)")
                     }
                 }
@@ -47,8 +46,7 @@ class SettingsViewModel: ObservableObject {
         }
     }
     
-    @Published
-    var autostartError: AutostartErrorKind?
+    var autoStartError: AutoStartErrorKind?
     
     var onLayoutChanged: () -> Void
     
@@ -66,24 +64,24 @@ class SettingsViewModel: ObservableObject {
     var transparencyRadius: Int32 {
         get { catSettings.transparencyRadius }
         set {
-            objectWillChange.send()
             catSettings.transparencyRadius = newValue
+            catSettings = catSettings
         }
     }
     
     var centerTransparency: Int32 {
         get { catSettings.centerTransparency }
         set {
-            objectWillChange.send()
             catSettings.centerTransparency = newValue
+            catSettings = catSettings
         }
     }
     
     var numCats: Int32 {
         get { catSettings.numCats }
         set {
-            objectWillChange.send()
             catSettings.numCats = newValue
+            catSettings = catSettings
             onLayoutChanged()
         }
     }

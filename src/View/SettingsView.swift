@@ -9,7 +9,7 @@ import Foundation
 import SwiftUI
 
 struct SettingsView: View {
-    @StateObject
+    @State
     private var settings: SettingsViewModel
     
     @Environment(\.dismiss)
@@ -19,9 +19,8 @@ struct SettingsView: View {
         settings: CatSettings,
         onLayoutChanged: @escaping () -> Void
     ) {
-        self._settings = StateObject(
-            wrappedValue: SettingsViewModel(
-                settings, onLayoutChanged: onLayoutChanged))
+        self.settings = SettingsViewModel(
+                settings, onLayoutChanged: onLayoutChanged)
     }
     
     var body: some View {
@@ -46,7 +45,7 @@ struct SettingsView: View {
             Toggle(isOn: $settings.autoStart) {
                 Text("Start on login")
             }
-            if let error = settings.autostartError {
+            if let error = settings.autoStartError {
                 switch error {
                 case .register:
                     Text("""
@@ -116,8 +115,7 @@ struct SettingsView: View {
         case 20: "Could you just stop?"
         case 24: "?"
         case 30...40: "BUT JUST WHY?"
-        case 200...499: "DOES THIS WORTH THE EFFORT?"
-        case 500...550: "Should I report for abuse... of the mouse?"
+        case 100...129: "DOES THIS WORTH THE EFFORT?"
         default: "..."
         }
     }
